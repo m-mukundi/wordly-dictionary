@@ -1,0 +1,262 @@
+nav {
+	border-bottom: 1px solid #e2e8f0;
+	background-color: #ffffff;
+	padding: 0 2rem;
+}
+
+.navbarContainer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	max-width: 1200px;
+	margin: 0 auto;
+	height: 60px;
+}
+
+/* Logo */
+.navbarContainer p {
+	font-size: 1.25rem;
+	font-weight: 700;
+	color: #00236f;
+}
+
+/* Nav links */
+.navbarLinks {
+	display: flex;
+	list-style: none;
+	gap: 1.5rem;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+.navbarLinks li {
+	display: flex;
+	align-items: center;
+}
+
+.navbarLinks li a {
+	text-decoration: none;
+	color: #64748b;
+	padding-bottom: 4px;
+	border-bottom: 2px solid transparent;
+}
+
+/* Active link */
+.navbarLinks li.active a {
+	color: #00236f;
+	font-weight: 600;
+	border-bottom: 2px solid #00236f;
+}
+
+/* Dark theme button */
+.navbarContainer button {
+	background: none;
+	border: none;
+	cursor: pointer;
+	color: #64748b;
+	font-size: 1.25rem;
+}
+nav button .material-symbols-outlined {
+	display: inline-block;
+	color: #00236f;
+}
+
+nav button .material-symbols-outlined.active {
+	display: none;
+}
+
+.searchboxContainer {
+	display: flex;
+	justify-content: center;
+	margin: 2rem auto;
+}
+
+.searchboxContainer form {
+	width: 100%;
+	max-width: 600px;
+}
+
+.searchboxContainer form > div {
+	display: flex;
+	align-items: center;
+	background-color: #ffffff;
+	border: 1px solid #e2e8f0;
+	border-radius: 8px;
+	padding: 0.5rem 1rem;
+	gap: 0.5rem;
+}
+
+/* Search icon */
+.searchboxContainer .material-symbols-outlined {
+	color: #64748b;
+	font-size: 1.25rem;
+}
+
+/* Input */
+.searchboxContainer input {
+	flex: 1;
+	border: none;
+	outline: none;
+	font-size: 1rem;
+	color: #00236f;
+	background: transparent;
+}
+
+.searchboxContainer input::placeholder {
+	color: #94a3b8;
+}
+
+/* Press button */
+.searchboxContainer button {
+	background: none;
+	border: none;
+	color: #94a3b8;
+	font-size: 0.875rem;
+	cursor: pointer;
+	white-space: nowrap;
+}
+
+.contentContainer {
+	max-width: 768px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 2rem;
+}
+
+.wordOfTheDayCard {
+	background-color: #ffffff;
+	border: 1px solid #e2e8f0;
+	border-radius: 12px;
+	padding: 2rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+
+/* Top row - Word of the Day label + bookmark */
+.wordOfTheDayCard > div:first-child {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.wordOfTheDayCard > div:first-child span {
+	background-color: #e8edf7;
+	color: #00236f;
+	font-size: 0.75rem;
+	font-weight: 600;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	padding: 0.25rem 0.75rem;
+	border-radius: 999px;
+}
+
+#bookmarkButton {
+	background: none;
+	border: none;
+	cursor: pointer;
+	color: #64748b;
+}
+
+/* Word + phonetics row */
+.wordOfTheDayCard > div:nth-child(2) {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+#wordOfTheDay {
+	font-size: 2.5rem;
+	font-weight: 700;
+	color: #00236f;
+	margin: 0;
+}
+
+.wordOfTheDayCard > div:nth-child(2) > div:last-child {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+#phonetics {
+	color: #64748b;
+	font-style: italic;
+	font-size: 1rem;
+}
+
+#playPronounciationButton {
+	background-color: #e8edf7;
+	border: none;
+	border-radius: 999px;
+	width: 32px;
+	height: 32px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	color: #00236f;
+}
+
+/* Part of speech + definition */
+.wordOfTheDayCard > div:nth-child(3) {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+}
+
+#partOfSpeech {
+	background-color: #f1f5f9;
+	color: #64748b;
+	font-size: 0.75rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	padding: 0.25rem 0.75rem;
+	border-radius: 4px;
+}
+
+#definition {
+	color: #334155;
+	font-size: 1rem;
+	line-height: 1.6;
+	margin: 0;
+}
+
+/* Synonyms + Read More row */
+.wordOfTheDayCard > div:last-child {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 1rem;
+	border-top: 1px solid #e2e8f0;
+}
+
+.wordOfTheDayCard > div:last-child > div {
+	display: flex;
+	gap: 0.25rem;
+	font-size: 0.95rem;
+}
+
+.wordOfTheDayCard > div:last-child > div span:first-child {
+	color: #64748b;
+}
+
+#synonyms {
+	color: #334155;
+	font-weight: 600;
+}
+
+#readMoreButton {
+	display: flex;
+	align-items: center;
+	gap: 0.25rem;
+	color: #00236f;
+	font-weight: 600;
+	text-decoration: none;
+	font-size: 0.95rem;
+}
+
+#readMoreButton:hover {
+	text-decoration: underline;
+}

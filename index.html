@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="style.css" />
+		<title>Wordly</title>
+	</head>
+	<body>
+		<nav>
+			<div class="navbarContainer">
+				<p>Wordly</p>
+				<ul class="navbarLinks">
+					<li class="active"><a href="#">Home</a></li>
+					<li><a href="#">Saved</a></li>
+				</ul>
+				<button class="themeIcon">
+					<span class="material-symbols-outlined"> dark_mode </span>
+					<span class="material-symbols-outlined active"> light_mode </span>
+				</button>
+			</div>
+		</nav>
+		<div class="searchboxContainer">
+			<form>
+				<div>
+					<div><span class="material-symbols-outlined"> search </span></div>
+					<input
+						type="search"
+						id="search"
+						placeholder="Search for a word..."
+						required
+					/>
+					<button type="button">Press ↵</button>
+				</div>
+			</form>
+		</div>
+		<div class="contentContainer">
+			<div class="wordOfTheDayCard">
+				<div>
+					<div><span>Word of the Day</span></div>
+					<div>
+						<button type="button" id="bookmarkButton">
+							<span class="material-symbols-outlined"> bookmark </span>
+						</button>
+					</div>
+				</div>
+				<div>
+					<div><h1 id="wordOfTheDay">Ephemeral</h1></div>
+					<div>
+						<div><span id="phonetics">ih-fem-er-uhl</span></div>
+						<div>
+							<button id="playPronounciationButton">
+								<span
+									class="material-symbols-outlined"
+									data-icon="play_arrow"
+									style="font-variation-settings: &quot;FILL&quot; 1"
+									>play_arrow</span
+								>
+							</button>
+						</div>
+					</div>
+				</div>
+				<div>
+					<div><span id="partOfSpeech">adjective</span></div>
+					<div>
+						<p id="definition">
+							Lasting for a very short time; transient; fleeting. Often used to
+							describe the beauty of things that do not endure, such as a sunset
+							or the life of a mayfly.
+						</p>
+					</div>
+				</div>
+				<div>
+					<div>
+						<span>Synonyms:</span
+						><span id="synonyms">Transient, Fugacious</span>
+					</div>
+					<a href="" id="readMoreButton"
+						>Read More<span class="material-symbols-outlined">
+							arrow_right_alt
+						</span></a
+					>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
