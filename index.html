@@ -15,31 +15,45 @@
 			<div class="navbarContainer">
 				<p>Wordly</p>
 				<ul class="navbarLinks">
-					<li class="active"><a href="#">Home</a></li>
+					<li id="homeButton" class="active"><a href="#">Home</a></li>
 					<li><a href="#">Saved</a></li>
 				</ul>
-				<button class="themeIcon">
-					<span class="material-symbols-outlined"> dark_mode </span>
-					<span class="material-symbols-outlined active"> light_mode </span>
-				</button>
+				<div class="navbarRight">
+					<div id="navSearchBox" class="searchboxContainer">
+						<form>
+							<div>
+								<div><span class="material-symbols-outlined">search</span></div>
+								<input
+									type="search"
+									placeholder="Search dictionary..."
+									required
+								/>
+							</div>
+						</form>
+					</div>
+					<button class="themeIcon">
+						<span class="material-symbols-outlined">dark_mode</span>
+						<span class="material-symbols-outlined active">light_mode</span>
+					</button>
+				</div>
 			</div>
 		</nav>
-		<div class="searchboxContainer">
+		<div id="mainSearchBox" class="searchboxContainer">
 			<form>
 				<div>
 					<div><span class="material-symbols-outlined"> search </span></div>
 					<input
-						type="search"
 						id="search"
+						type="search"
 						placeholder="Search for a word..."
 						required
 					/>
-					<button type="button">Press ↵</button>
+					<button id="searchButton" type="button">Press ↵</button>
 				</div>
 			</form>
 		</div>
 		<div class="contentContainer">
-			<div class="wordOfTheDayCard">
+			<div id="wordOfTheDayCard">
 				<div>
 					<div><span>Word of the Day</span></div>
 					<div>
@@ -49,11 +63,16 @@
 					</div>
 				</div>
 				<div>
-					<div><h1 id="wordOfTheDay">Ephemeral</h1></div>
-					<div>
-						<div><span id="phonetics">ih-fem-er-uhl</span></div>
+					<div><h1 id="wordOfTheDay"></h1></div>
+					<div class="phonetics">
 						<div>
-							<button id="playPronounciationButton">
+							<span id="wordOfDayPhonetics" class="phoneticSpelling"></span>
+						</div>
+						<div>
+							<button
+								id="wordOfDayPronounciation"
+								class="playPronounciationButton"
+							>
 								<span
 									class="material-symbols-outlined"
 									data-icon="play_arrow"
@@ -65,20 +84,15 @@
 					</div>
 				</div>
 				<div>
-					<div><span id="partOfSpeech">adjective</span></div>
+					<div class="partOfSpeech">
+						<span id="wordOfDayPartOfSpeech"></span>
+					</div>
 					<div>
-						<p id="definition">
-							Lasting for a very short time; transient; fleeting. Often used to
-							describe the beauty of things that do not endure, such as a sunset
-							or the life of a mayfly.
-						</p>
+						<p id="definition"></p>
 					</div>
 				</div>
 				<div>
-					<div>
-						<span>Synonyms:</span
-						><span id="synonyms">Transient, Fugacious</span>
-					</div>
+					<div><span>Synonyms:</span><span id="synonyms"></span></div>
 					<a href="" id="readMoreButton"
 						>Read More<span class="material-symbols-outlined">
 							arrow_right_alt
@@ -86,6 +100,70 @@
 					>
 				</div>
 			</div>
+			<div id="searchResults" style="display: none">
+				<div class="wordHeaderContainer">
+					<div><h1 id="searchedWord"></h1></div>
+					<div>
+						<div class="phonetics">
+							<div class="phoneticSpelling">
+								<span id="searchedWordPhonetics"></span>
+							</div>
+							<div class="playPronounciationButton">
+								<button
+									id="searchedWordPronounciation"
+									class="playPronounciationButton"
+								>
+									<span class="material-symbols-outlined" data-icon="volume_up"
+										>volume_up</span
+									>
+								</button>
+							</div>
+						</div>
+						<div class="bookmark">
+							<button>
+								<span class="material-symbols-outlined"> bookmark </span>Save to
+								Vocabulary
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="definitionsContainer">
+					<div class="partOfSpeech">
+						<span id="searchedWordPartOfSpeech">Adjective</span>
+					</div>
+					<div class="listOfDefinitionsContainer">
+						<ol id="definitions"></ol>
+					</div>
+				</div>
+				<div class="synonymsContainer">
+					<div>
+						<h4>
+							<span
+								class="material-symbols-outlined text-lg"
+								data-icon="auto_awesome"
+								>auto_awesome</span
+							>Synonyms
+						</h4>
+					</div>
+					<div id="synonymsList">
+						<ul></ul>
+					</div>
+				</div>
+			</div>
 		</div>
+		<footer style="display: none">
+			<div>
+				<span>Source:</span
+				><a href="https://en.wiktionary.org/wiki/luminous"
+					>Wiktionary, the free dictionary<span
+						class="material-symbols-outlined text-xs"
+						data-icon="open_in_new"
+						>open_in_new</span
+					></a
+				>
+			</div>
+		</footer>
+		<script src="./bin/index.js"></script>
 	</body>
 </html>
+<!doctype html>

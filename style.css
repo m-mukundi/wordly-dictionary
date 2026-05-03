@@ -49,6 +49,52 @@ nav {
 	border-bottom: 2px solid #00236f;
 }
 
+.navbarRight {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+
+/* Hidden by default, shown when toggled */
+.navbarRight .searchboxContainer {
+	display: none;
+}
+
+.navbarRight .searchboxContainer.visible {
+	display: block;
+}
+
+/* Navbar searchbox specific styles */
+.navbarRight .searchboxContainer form > div {
+	display: flex;
+	align-items: center;
+	border: 1.5px solid #d0d4e8;
+	border-radius: 999px;
+	padding: 6px 14px;
+	gap: 6px;
+	background-color: #fff;
+}
+
+.navbarRight .searchboxContainer form > div span {
+	font-size: 18px;
+	color: #9399b2;
+	display: flex;
+	align-items: center;
+}
+
+.navbarRight .searchboxContainer input {
+	border: none;
+	outline: none;
+	background: transparent;
+	font-size: 14px;
+	color: #3b3f5c;
+	width: 200px;
+}
+
+.navbarRight .searchboxContainer input::placeholder {
+	color: #9399b2;
+}
+
 /* Dark theme button */
 .navbarContainer button {
 	background: none;
@@ -124,7 +170,7 @@ nav button .material-symbols-outlined.active {
 	padding: 2rem;
 }
 
-.wordOfTheDayCard {
+#wordOfTheDayCard {
 	background-color: #ffffff;
 	border: 1px solid #e2e8f0;
 	border-radius: 12px;
@@ -135,13 +181,13 @@ nav button .material-symbols-outlined.active {
 }
 
 /* Top row - Word of the Day label + bookmark */
-.wordOfTheDayCard > div:first-child {
+#wordOfTheDayCard > div:first-child {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 }
 
-.wordOfTheDayCard > div:first-child span {
+#wordOfTheDayCard > div:first-child span {
 	background-color: #e8edf7;
 	color: #00236f;
 	font-size: 0.75rem;
@@ -160,20 +206,21 @@ nav button .material-symbols-outlined.active {
 }
 
 /* Word + phonetics row */
-.wordOfTheDayCard > div:nth-child(2) {
+#wordOfTheDayCard > div:nth-child(2) {
 	display: flex;
 	flex-direction: column;
 	gap: 0.5rem;
 }
 
 #wordOfTheDay {
+	text-transform: capitalize;
 	font-size: 2.5rem;
 	font-weight: 700;
 	color: #00236f;
 	margin: 0;
 }
 
-.wordOfTheDayCard > div:nth-child(2) > div:last-child {
+#wordOfTheDayCard > div:nth-child(2) > div:last-child {
 	display: flex;
 	align-items: center;
 	gap: 0.5rem;
@@ -185,7 +232,7 @@ nav button .material-symbols-outlined.active {
 	font-size: 1rem;
 }
 
-#playPronounciationButton {
+#wordOfDayPronounciation {
 	background-color: #e8edf7;
 	border: none;
 	border-radius: 999px;
@@ -199,7 +246,7 @@ nav button .material-symbols-outlined.active {
 }
 
 /* Part of speech + definition */
-.wordOfTheDayCard > div:nth-child(3) {
+#wordOfTheDayCard > div:nth-child(3) {
 	display: flex;
 	flex-direction: column;
 	gap: 0.75rem;
@@ -224,7 +271,7 @@ nav button .material-symbols-outlined.active {
 }
 
 /* Synonyms + Read More row */
-.wordOfTheDayCard > div:last-child {
+#wordOfTheDayCard > div:last-child {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -232,13 +279,13 @@ nav button .material-symbols-outlined.active {
 	border-top: 1px solid #e2e8f0;
 }
 
-.wordOfTheDayCard > div:last-child > div {
+#wordOfTheDayCard > div:last-child > div {
 	display: flex;
 	gap: 0.25rem;
 	font-size: 0.95rem;
 }
 
-.wordOfTheDayCard > div:last-child > div span:first-child {
+#wordOfTheDayCard > div:last-child > div span:first-child {
 	color: #64748b;
 }
 
@@ -259,4 +306,183 @@ nav button .material-symbols-outlined.active {
 
 #readMoreButton:hover {
 	text-decoration: underline;
+}
+
+/* Overall container */
+.contentContainer {
+	max-width: 750px;
+	margin: 2rem auto;
+	padding: 0 1.5rem;
+}
+
+/* Word header */
+.wordHeaderContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+	padding-bottom: 1.5rem;
+	border-bottom: 1px solid #e2e8f0;
+}
+
+.wordHeaderContainer h1 {
+	text-transform: capitalize;
+	font-size: 2.5rem;
+	font-weight: 700;
+	color: #00236f;
+	margin: 0;
+}
+
+/* Phonetics row */
+.phonetics {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+}
+
+.phoneticSpelling span {
+	color: #64748b;
+	font-size: 1rem;
+}
+
+.playPronounciationButton button {
+	background-color: #f1f5f9;
+	border: none;
+	border-radius: 999px;
+	width: 36px;
+	height: 36px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	color: #00236f;
+}
+
+/* Save to Vocabulary button */
+.wordHeaderContainer > div:last-child {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.bookmark button {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	background-color: #f5a623;
+	color: #00236f;
+	border: none;
+	border-radius: 8px;
+	padding: 0.6rem 1.5rem;
+	font-size: 0.95rem;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.bookmark button .material-symbols-outlined {
+	color: #00236f;
+}
+
+/* Definitions section */
+.definitionsContainer {
+	margin-top: 1.5rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.partOfSpeech span {
+	background-color: #f1f5f9;
+	color: #64748b;
+	font-size: 0.75rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	padding: 0.25rem 0.75rem;
+	border-radius: 4px;
+	display: inline-block;
+}
+
+#definitions {
+	padding-left: 1.25rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1.25rem;
+	color: #334155;
+	font-size: 1rem;
+	line-height: 1.6;
+	margin: 0;
+}
+
+/* Synonyms section */
+.synonymsContainer {
+	background-color: #ffffff;
+	border: 1px solid #e2e8f0;
+	border-radius: 12px;
+	padding: 1.25rem;
+	margin-top: 2rem;
+}
+
+.synonymsContainer h4 {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	color: #00236f;
+	font-size: 1rem;
+	font-weight: 600;
+	margin: 0 0 1rem;
+}
+
+.synonymsContainer > div:last-child {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+
+.synonymsContainer ul {
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+
+.synonymsContainer button {
+	background-color: #ffffff;
+	border: 1px solid #e2e8f0;
+	border-radius: 999px;
+	padding: 0.4rem 1rem;
+	font-size: 0.9rem;
+	color: #334155;
+	cursor: pointer;
+}
+
+.synonymsContainer button:hover {
+	background-color: #f1f5f9;
+}
+
+/* Footer */
+footer {
+	max-width: 750px;
+	margin: 2rem auto;
+	padding: 1rem 1.5rem 0;
+	border-top: 1px solid #e2e8f0;
+	display: flex;
+	justify-content: space-between;
+	color: #64748b;
+	font-size: 0.875rem;
+}
+
+footer a {
+	color: #00236f;
+	text-decoration: none;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.25rem;
+}
+
+footer a:hover {
+	text-decoration: underline;
+}
+
+footer .material-symbols-outlined {
+	font-size: 0.875rem;
 }
